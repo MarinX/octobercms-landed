@@ -1,0 +1,51 @@
+==
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>{{ this.page.title }}</title>
+    <meta name="description" content="{{ this.page.meta_description }}">
+    <meta name="title" content="{{ this.page.meta_title }}">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!--[if lte IE 8]><script src="{{ 'assets/js/ie/html5shiv.js'|theme}}"></script><![endif]-->
+
+    <link href="{{ [
+            '@framework.extras',
+            'assets/sass/main.scss'
+        ] | theme }}" rel="stylesheet">
+
+
+    <!--[if lte IE 9]><link rel="stylesheet" href="{{ 'assets/css/ie9.css'|theme}}" /><![endif]-->
+    <!--[if lte IE 8]><link rel="stylesheet" href="{{ 'assets/css/ie8.css'|theme}}" /><![endif]-->
+    {% styles %}
+
+</head>
+
+<body class=" {% if this.page.id == 'index' %} landing {% endif %}">
+
+<div id="page-wrapper">
+
+    {% partial 'header.htm' %}
+
+        {% page %}
+
+    {% partial 'footer.htm' %}
+</div>
+
+
+
+<script src="{{ [
+'assets/js/jquery.min.js',
+'assets/js/jquery.scrolly.min.js',
+'assets/js/jquery.dropotron.min.js',
+'assets/js/jquery.scrollex.min.js',
+'assets/js/skel.min.js',
+'assets/js/util.js',
+'assets/js/main.js'
+] | theme }}"></script>
+<!--[if lte IE 8]><script src="{{'assets/js/ie/respond.min.js'|theme}}"></script><![endif]-->
+
+{% scripts %}
+</body>
+</html>
